@@ -1,0 +1,124 @@
+import 'package:flutter/material.dart';
+
+class LogInpage extends StatefulWidget {
+  const LogInpage({Key? key}) : super(key: key);
+
+  @override
+  State<LogInpage> createState() => _LogInpageState();
+}
+
+class _LogInpageState extends State<LogInpage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              children: [
+                SizedBox(
+                  height: 60,
+                  child: Image.asset("Assets/images/foodadda.png"),
+                ),
+                Text(
+                  "FoodAdda",
+                  style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.black87,
+                      fontFamily: "PermanentMarker"),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            TextField(
+              style: TextStyle(color: Colors.black),
+              decoration: InputDecoration(
+                hintText: "Enter UserName",
+                hintStyle: TextStyle(color: Colors.grey),
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(32),
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(32),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(32),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TextField(
+              obscureText: true,
+              style: TextStyle(color: Colors.black),
+              decoration: InputDecoration(
+                hintText: "Enter Password",
+                hintStyle: TextStyle(color: Colors.grey),
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(32),
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(32),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(32),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 25),
+              child: Material(
+                elevation: 0.5,
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.circular(32),
+                child: MaterialButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return LogInpage();
+                    }));
+                  },
+                  minWidth: 200,
+                  height: 30,
+                  child: Text("LogIn"),
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text("New User?",style: TextStyle(fontSize: 15, color: Colors.black),),
+                Text("Register First.",style: TextStyle(fontSize:15, color: Colors.blue),),
+              ],
+            )
+          ],
+
+        ),
+      ),
+    );
+  }
+}
